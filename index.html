@@ -128,11 +128,38 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   
         }
 
-        img {
+        .image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover; /* Ajuste la taille de l'image pour remplir le conteneur sans déformation */
             border-radius: 50%; /* Assure que l'image suit la forme du conteneur circulaire */
+        }
+
+        .rootme {
+            display: flex;
+            margin: 20px auto;
+            padding: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .txt_rootme {
+            display: block;
+            max-width: 800px;
+            border-radius: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: -20px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .img_rootme img{
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+            margin-top: -100px;
         }
 
     </style>
@@ -156,8 +183,8 @@
         </div>
         <div class="collapse">
             <ul class="navbar-nav">
-                <li><a href="#home">Notre équipe</a></li>
-                <li><a href="#about">Les sites d'entrainement</a></li>									
+                <li><a href="#team">Notre équipe</a></li>
+                <li><a href="#site">Les sites d'entrainement</a></li>									
                 <li><a href="#secvice">Les préparatifs</a></li>
                 <li><a href="#gallery">Le jour J</a></li>
             </ul>
@@ -168,41 +195,87 @@
         <h1>Notre Équipe</h1>
     </header> -->
 
-    <section>
-        <div class="member">
-            <div class="image-container">
-                <img src="autres/flo.png" alt="flo">
+    <main>
+        <section id="team">
+            <div class="member">
+                <div class="image-container">
+                    <img src="autres/flo.png" alt="flo">
+                </div>
+                <h2>Florian IMPROVISATO</h2>
+                <p>Poste du Membre 1</p>
             </div>
-            <h2>Florian IMPROVISATO</h2>
-            <p>Poste du Membre 1</p>
+    
+            <div class="member">
+                <div class="image-container">
+                    <img src="autres/none.png" alt="estelle">
+                </div>
+                <h2>Estelle <br> BABY</h2>
+                <p>Poste du Membre 2</p>
+            </div>
+    
+            <div class="member">
+                <div class="image-container">
+                    <img src="autres/charles.jpeg" alt="charles">
+                </div>
+                <h2>Charles WATRELOT</h2>
+                <p>Poste du Membre 3</p>
+            </div>
+    
+            <div class="member">
+                <div class="image-container">
+                    <img src="autres/arnaud.jpeg" alt="arnaud">
+                </div>
+                <h2>Arnaud BRUGERE</h2>
+                <p>Poste du Membre 4</p>
+            </div>
+    
+        </section>
+    
+        <div class="rootme" id="site">
+
+            <div class="img_rootme">
+                <img src="autres/rootme.jpeg" alt="rootme">
+            </div>
+
+            <div class="txt_rootme">
+                <div style="display: flex; padding: 10px;">
+
+                    <section>
+                        <h2>À propos de RootMe</h2>
+                        <p>RootMe est une plateforme en ligne consacrée à la formation et à 
+                            la pratique des compétences en sécurité informatique.</p>
+            
+                        <h2>Fonctionnalités Principales</h2>
+                        <p>
+                            <b>Challenges de Sécurité</b> : RootMe propose une grande diversité de challenges 
+                            de sécurité informatique qui couvrent plusieurs catégories telles que le 
+                            reverse engineering, le cracking, le pentest, le steganography, etc. Ces challenges 
+                            permettent aux utilisateurs de mettre en pratique leurs compétences de manière interactive.
+                        </p>
+                        <p>
+                            <b>Cours en Ligne</b> : La plateforme propose également des cours en ligne portant sur différents 
+                            aspects de la sécurité informatique. Ces cours sont conçus pour tous les niveaux, des débutants 
+                            aux experts, et couvrent des sujets tels que la cryptographie, l'analyse de malware, les attaques web, etc.
+                        </p>
+                        <p>
+                            <b>Communauté Active</b> : RootMe dispose d'une communauté active d'apprenants et de professionnels de la sécurité 
+                            informatique. Les utilisateurs peuvent interagir, partager leurs expériences, poser des questions et collaborer 
+                            sur les challenges.
+                        </p>
+                    </section>
+            
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="member">
-            <div class="image-container">
-                <img src="autres/none.png" alt="estelle">
-            </div>
-            <h2>Estelle <br> BABY</h2>
-            <p>Poste du Membre 2</p>
-        </div>
+        
 
-        <div class="member">
-            <div class="image-container">
-                <img src="autres/charles.jpeg" alt="charles">
-            </div>
-            <h2>Charles WATRELOT</h2>
-            <p>Poste du Membre 3</p>
-        </div>
+    </main>
 
-        <div class="member">
-            <div class="image-container">
-                <img src="autres/arnaud.jpeg" alt="arnaud">
-            </div>
-            <h2>Arnaud BRUGERE</h2>
-            <p>Poste du Membre 4</p>
-        </div>
-
-    </section>
-
+    
 
     
 
