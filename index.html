@@ -148,13 +148,13 @@
         }
 
         .member {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            background-color: none;
+            border-radius: 20px;
             padding: 0.5em;
             margin: 1em;
             width: 200px;
             text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         }
 
         .image-container {
@@ -275,11 +275,83 @@
         #texte{
             margin: auto;
             padding: 20px;
-            padding-left: 110px;
-            padding-right: 110px;
         }
 
-      
+        .image-wrapper {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .image-wrapper-est{
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-wrapper img {
+            max-height: 500px;
+            border-radius: 20px;
+            background-color: none;
+            border: none;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .image-wrapper h4 {
+            font-size: small;    
+        }
+
+        .description {
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img{
+            max-height: 400px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 20px;
+        }
+
+        .fade {
+            width: fit-content;
+            animation: fade 1.5s;
+        }
+
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            width: fit-content;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 24px;
+            padding: 10px;
+            text-align: center;
+            margin-top: -22px;
+            font-weight: bold;
+            font-size: 22px;
+            transition: 0.3s ease;
+            user-select: none;
+            margin-left: -50px;
+            margin-right: -50px;
+            border-radius: 30px;
+        }
+
+        .next { 
+            right: 0;
+        }
+
+        .prev:hover, .next:hover {
+            border-radius: 30px;
+            color: white;
+            background-color: rgba(132, 132, 132, 0.512);
+        }
 
     </style>
 </head>
@@ -311,7 +383,7 @@
 
     <main>
         <section id="team">
-            <div class="member">
+            <div class="member" style="color:white;background-color: #005fc4;">
                 <div class="image-container">
                     <img src="autres/flo.png" alt="flo">
                 </div>
@@ -319,16 +391,16 @@
                 <p>
                     <b>Lieutenant</b>
                     <br>
-                    Lutte Informatique Défensive
+                    Lutte Informatique Défensive / Offensive
                 </p>
 
             </div>
     
-            <div class="member">
+            <div class="member" style="color:white;background-color: #c40000;">
                 <div class="image-container">
                     <img src="autres/estelle.png" alt="estelle">
                 </div>
-                <h2>Estelle <br> BABY</h2>
+                <h2>Estelle <br> BABY</h2>  
                 <p>
                     <b>Soldat</b>
                     <br>
@@ -336,7 +408,7 @@
                 </p>
             </div>
     
-            <div class="member">
+            <div class="member" style="color:white;background-color: #c40000;">
                 <div class="image-container">
                     <img src="autres/charles.jpeg" alt="charles">
                 </div>
@@ -348,7 +420,7 @@
                 </p>
             </div>
     
-            <div class="member">
+            <div class="member" style="color:white;background-color: #005fc4;">
                 <div class="image-container">
                     <img src="autres/arnaud.jpeg" alt="arnaud">
                 </div>
@@ -462,7 +534,7 @@
                     <br>
                     <br>
                     Nous étions environ une centaine d'étudiants tous plongés dans un conflit entre deux nations fictives, 
-                    <b>Anumérique</b>
+                    <b>Anuméric</b>
                     et 
                     <b>Cryptanga</b>, mêlant les aspects physiques et virtuels. Ambassades, réseaux sociaux, infrastructures vitales, malwares... 
                     Tout en étant sous la menace des différents hackeurs et mercenaires qui tentairent de faire basculer les éléctions et 
@@ -490,7 +562,7 @@
 
         <div class="retex" id="retex">
             <div>
-                <h2>Retour d'experience</h2>
+                <h2>Après la compétition - Retour d'expérience</h2>
                 <p>
                     Chaque membre de l'équipe avait un rôle différent et nous avons tous effectuer des activités différentes
                     tout au long de la compétition au sein de <b>Cryptanga</b>. 
@@ -523,6 +595,32 @@
 
         </div>
 
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="autres/1.jpeg" >
+            </div>
+        
+            <div class="mySlides fade">
+                <img src="autres/2.png" >
+            </div>
+        
+            <div class="mySlides fade">
+                <img src="autres/4.jpeg">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="autres/est4.png">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="autres/3.jpeg">
+            </div>
+        
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        
+
     </main>
 
     <footer>
@@ -532,8 +630,6 @@
     
 
     
-
-
 </body>
 
 </html>
@@ -565,25 +661,46 @@
       boxtothetop();
     });
 
-
     function afficherTexte(personne) {
-  var texte = "";
-  switch(personne) {
-    case 1:
-      texte = "<p><b>Du point de vue de Florian</b><br> <br> <b>Préparation :</b> Pour préparer l'évenement j'ai principalement utiliser des sites d'entrainement comme RootMe et TryHackMe. J’ai plutôt fait le paris d’avoir des connaissances solides dans tous les domaines importants et pas d’être spécialisé dans un seul. Cela m'a beaucoup aidé à avoir une vision globale des menaces et vulnérabilités que l'on aurait pu rencontrer lors du CHE. J'ai pu ainsi me familiariser et me perfectionner avec des outils que je n'utilisais pas ou peu comme Burp ou nmap. <br> <br><b>Lundi :</b> Après une présentation globale de l'évenement, j'ai pu découvir le lieu où nous allions passer les trois prochains jours. Je me suis porté volontaire pour être sous-Capitaine / Lieutenant de ma brigade de lutte informatique défensive (LID) c'est pourquoi j'ai dù me familiariser avec les personnes que j'allais devoir diriger et suivre l'avancée. Après avoir tous fait connaissance, nous avons tout de suite entamé la phase de cartographie de notre réseau pour y découvrir les machines ainsi sur les différents équipements que nous avions. Nous avons ainsi découvert différents sites web avec leur vulnérabilités ainsi que des firewalls dont les mots de passes n'étaient pas sécurisés. Le reste de la journée fut ainsi consacré au changement des mots de passes et à la recherche de vulnérabilité des sites et services que nous avions. Nous avons aussi subit des attaques physiques normalement interdites qui nous ont donné un coup au morale mais mon objectif était de rebondir et se demander comment nous pouvions en faire une force. Il a fallut aussi gérer les heures de sommeil et de déjeuner grâce à un planning dont je me suis occupé. <br> <br> <b>Mardi :</b>Dès la reprise de la compétiton Arnaud et moi avions tenté de nous connecter au réseau des Anumérique en installant un cable ethernet directement sur le routeur de leur tente de commandement. Malheureusement cela n'a pas pu aboutir, j'ai donc continuer à gérer la défense aen compagnie de l'autre lieutenant. Les principales mission de ce jour étaient la mise ne place d'une mise à jour pour un site wordpresse obsolet et la modification des mots de passe SSH trop faciles à trouver. De même pour les PFsense qui n'avaient pas de mots de passes robustes. De même il fallut commencer à préparer les rondes de nuit et bien avoir en tête qui serait présent ou non et quand. Nous avions ensuite pour projet d'installer sur les ordinateurs d'attaque et sur les firewall des antivirus afin de protéger les éventuelles attaques ennemies. Ceci fut achever peu avant minuit.<br><br> <b>Mercredi :</b> De minuit à 6h du matin nous avons tenter de profiter d'une vulnérabilité 0 day sur un de nos service glpi précédemment attaqué par un membre des admins afin d'y installer un reverse shell et prendre la main à distance sur le site web. Après de longue phase de recherche Sami, un attaquant à reussi à reprendre la main et changer les mots de passe et remettre notre site en fonction comme il se doit. Nous en avons profité pour exploiter cette même vulnérabilité chez les adversaires et déphaser leur site. Après une pause dodo de près de 1h. J'ai continué à verifier que nos site n'étaient pas attaqués. <br> <br> <b>Mon ressenti :</b> Pour ma part j'ai adoré le fait de devoir gérer une équipe et les actions qu'on a dû mener. Je me rend compte de la chance que l'on a eu de pouvoir participer à un tel évenement et je suis fière des actions que l'on a méné et de la gestion des moments de crise avec les capitaines et les membres de l'équipe. </p>";
-      break;
-    case 2:
-      texte = "<p><b>Du point de vue d'Estelle</b><br> <br>Texte pour personne 2.</p>";
-      break;
-    case 3:
-      texte = "<p><b>Du point de vue de Charles</b><br> <br> Préparation : </p>";
-      break;
-    case 4:
-      texte = "<p><b>Du point de vue d'Arnaud</b> <br> <br> <b>Préparation :</b> Afin de préparer le Cyber Humanum Est (CHE), j’ai fait beaucoup de challenge Root Me afin de me familiariser avec des outils issus de Kali Linux (comme Burp Suite, Wireshark, Hashcat, etc. ). Je me concentrais principalement sur les challenges de type Cryptographie, Sténographie, Web Serveur et Web Client. Mon score Root Me est passé de 0 à 1130 points. <br><br><b>Lundi :</b> Durant le premier jour, la mission principale était la découverte du réseau et la cartographie de ce dernier. Cela nous a pris une bonne partie de la journée. En fin d’après-midi, j’ai pu aussi avoir une formation rapide aux logiciels d’administration des automates Siemens et des pare-feu GÉOÏDE. Mon bilan de cette journée est que j’ai manqué d’expérience notamment au niveau de l’utilisation de la commande “nmap”, j’ai donc passé ma soirée à apprendre comment bien l’utiliser afin d’être en prêt le lendemain. De plus, nous avons discuté d’une stratégie afin de commencer à attaquer les adversaires.<br><br> <b>Mardi :</b> Le lendemain matin, je me suis introduit dans une des tentes adverses afin de poser un câble ethernet sur leur routeur, notre stratégie était de lancer une attaque depuis leur réseau afin de récupérer un maximum de flag et de faire tomber certaines structures adverses. Malheureusement, l’attaque n’a pas eu lieu car notre équipe à mettre trop de temps à préparer une offensive, temps qui a permis aux adversaires de découvrir le câble sur leur routeur.Un des soucis que cette découverte à poser était que le câble constituait une preuve contre nous, il a donc fallu le récupérer le plus vite possible. J’ai donc élaboré un plan en détournant un journaliste présent sur les lieux afin qu’il aille récupérer le câble à notre place.Le plan s’est bien déroulé mais les militaires présents sur le site m’ont repéré, j'ai donc été en prison pendant 30 minutes. Le reste de la journée, j’ai participé aux missions de Siemens qui consistaient à sécuriser leurs automates. Le soir, j’ai réalisé les CTF de l’ambassade dans laquelle j’ai pu récupérer les données d’une carte d’authentification avec une puce RFID et les transférer dans une autre carte. J’ai aussi pu commencer un challenge qui consistait à hacker un clavier bluetooth à distance afin de récupérer les entrées de ce dernier. Je suis ensuite allé me coucher à 4h du matin. <br><br> <b>Mercredi :</b> Je me suis réveillé vers 6h30, j’ai directement repris le challenge du clavier mais j'étais très fatigué et ma concentration était vraiment réduite. J’ai passé la journée à essayer de résoudre le défi, chose que j'ai réussi à faire vers 15h (j’ai passé énormément de temps dessus). <br><br> <b>Mon ressenti :</b> Cette expérience était unique en son genre, et je suis vraiment reconnaissant envers l’ensemble des organisateurs d’avoir pu nous offrir une expérience comme celle-ci. J’ai pu apprendre à surpasser mes limites, observer et utiliser d’autres techniques de hacking, plus physique comme l’ingénierie sociale par exemple. J’ai le sentiment d’avoir énormément progressé durant ces 3 jours. Je ne tire que du positif de cette expérience.</p>";
-      break;
-    default:
-      texte = "Sélection invalide.";
-  }
-  document.getElementById("texte").innerHTML = texte;
-}
+    var texte = "";
+    switch(personne) {
+        case 1:
+            texte = "<p><b style='color:#005fc4;'>Du point de vue de Florian</b><br> <br> <b>Préparation :</b> Pour préparer l'événement, j'ai principalement utilisé des sites d'entraînement comme RootMe et TryHackMe. J’ai plutôt fait le pari d’avoir des connaissances solides dans tous les domaines importants plutôt que d’être spécialisé dans un seul. Cela m'a beaucoup aidé à avoir une vision globale des menaces et vulnérabilités que l'on aurait pu rencontrer lors du CHE. J'ai ainsi pu me familiariser et me perfectionner avec des outils que je n'utilisais pas ou peu, comme Burp ou nmap. <br> <br><b>Lundi :</b> Après une présentation globale de l'événement, j'ai pu découvrir le lieu où nous allions passer les trois prochains jours. Je me suis porté volontaire pour être sous-Capitaine / Lieutenant de ma brigade de lutte informatique défensive (LID) et offensive (LIO), c'est pourquoi j'ai dû me familiariser avec les personnes que j'allais devoir diriger et suivre l'avancée. Notre équipe était plutôt hybride donc nous faisions en priorité de la défense et parfois de l'attaque. Après avoir tous fait connaissance, nous avons tout de suite entamé la phase de cartographie de notre réseau pour y découvrir les machines ainsi que les différents équipements que nous avions. Nous avons ainsi découvert différents sites web avec leurs vulnérabilités ainsi que des pare-feu dont les mots de passe n'étaient pas sécurisés. Le reste de la journée fut ainsi consacré au changement des mots de passe et à la recherche de vulnérabilités des sites et services que nous avions. Nous avons aussi subi des attaques physiques normalement interdites qui nous ont donné un coup au moral mais mon objectif était de rebondir et se demander comment nous pouvions en faire une force. Il a fallu aussi gérer les heures de sommeil et de déjeuner grâce à un planning dont je me suis occupé. <br> <br> <b>Mardi :</b> Dès la reprise de la compétition, Arnaud et moi avons tenté de nous connecter au réseau des Amériques en installant un câble Ethernet directement sur le routeur de leur tente de commandement. Malheureusement, cela n'a pas abouti, j'ai donc continué à gérer la défense avec l'autre lieutenant. Les principales missions de ce jour étaient la mise en place d'une mise à jour pour un site Wordpress obsolète et la modification des mots de passe SSH trop faciles à trouver. De même pour les PFsense qui n'avaient pas de mots de passe robustes. Il a aussi fallu commencer à préparer les rondes de nuit et bien avoir en tête qui serait présent ou non et quand. Nous avions ensuite pour projet d'installer sur les ordinateurs d'attaque et sur les pare-feu des antivirus afin de protéger les éventuelles attaques ennemies. Ceci fut achevé peu avant minuit.<br><br> <b>Mercredi :</b> De minuit à 6h du matin, nous avons tenté de profiter d'une vulnérabilité 0 day sur un de nos services GLPI précédemment attaqué par un membre des admins afin d'y installer un reverse shell et prendre la main à distance sur le site web. Après de longues phases de recherche, Sami, un attaquant, a réussi à reprendre la main et changer les mots de passe et remettre notre site en fonction comme il se doit. Nous en avons profité pour exploiter cette même vulnérabilité chez les adversaires et déphaser leur site. Après une pause dodo d'environ 1 heure, j'ai continué à vérifier que nos sites n'étaient pas attaqués. <br> <br> <b>Mon ressenti :</b> Pour ma part, j'ai adoré le fait de devoir gérer une équipe et les actions que nous avons dû mener. Je me rends compte de la chance que nous avons eue de pouvoir participer à un tel événement et je suis fier des actions que nous avons menées et de la gestion des moments de crise avec les capitaines et les membres de l'équipe. </p>";
+            break;
+        case 2:
+            texte = "<p><b style='color:#c40000;'>Du point de vue d'Estelle</b><br><br><b>Préparation :</b><br>En préparation de cet évènement, j’ai réalisé de nombreux CTF (Capture The Flag) sur « Root-Me » principalement, mais j’ai aussi fait de l’OSINT sur une plateforme dédiée. De plus, j’ai réalisé quelques CTF sur le module mis en place par l’entreprise « Soteria-Lab » à Polytech. Réaliser tous ces CTF m’a permis d’acquérir de nombreuses compétences dans différents domaines. Ceux sur le site « Root-Me » m’ont permis d’améliorer mes compétences techniques dans différents domaines tels que le réseau, la stéganographie, la cryptographie ainsi que le web principalement. L’OSINT quant à elle m’a fait comprendre l’importance de tout ce qui est sur l’internet ainsi que la facilité à retrouver certaines informations que l’on pourrait penser cachées.<br><br><b>Lundi :</b> Durant ce premier jour, nous avons principalement travaillé sur du réseau, découverte du réseau, le nôtre principalement ainsi que le leur vers la fin de la journée. Cela ne nous a pas empêchés de continuer la découverte de notre réseau sur les jours suivants. Pour ma part, j’ai passé la plupart de mon temps à scanner le réseau adverse, découvrir les ports ouverts, et explorer les protocoles basés sur ceux-ci en me concentrant principalement sur les ports http, MySQL qui pouvaient donner le plus de flags et d’informations sur l’équipe adverse. Les sites web étant la plupart du temps en 3 lettres suivies des 3 premières lettres de l’équipe, nous avons aussi découvert des sites web adverses en suivant cette logique. Une fois découverts, je me suis concentrée sur la recherche de failles sur ceux-ci. Vers la fin de la journée, c’était plus difficile de travailler, car les organisateurs nous attaquaient et éteignaient nos PC à l’aide d’un script bash, nous étions donc un peu ralentis.</p><div class='image-wrapper'><img src='autres/est1.jpg' alt='Image 1'><div class='description'><h4 style='margin:auto;'>Résultat de l'attaque de l'équipe organisatrice</h4></div></div><p><br><b>Mardi :</b> J’ai continué mon travail de scan du réseau, analyse et recherche de failles sur les sites web trouvés, j’ai aussi fait un peu de cryptographie lorsque je trouvais des chaînes de caractères encodées, en utilisant hashcat. Cependant, la plupart étaient en MD5 ce qui ne fut pas très difficile à déchiffrer. J’ai aussi réussi à me connecter à plusieurs sites avec les identifiants de base qui n’avaient pas été modifiés. L’ironie du sort, c’est que ces mêmes identifiants étaient présents sur nos sites et nous ne les avons pas modifiés avant d’avoir été attaqués. Les principaux outils utilisés étaient mon terminal de commande avec les commandes « nmap » et « dirb » qui me permettaient de trouver des informations sur les protocoles ainsi que les liens des sites. L’outil « Burp » m’a été d’une grande aide ensuite pour analyser ces sites.</p><div class='image-wrapper-est'><div class='image-wrapper'><img src='autres/est2.jpg' alt='Image 2'><div class='description'><h4 style='margin:auto;'>Extrait d'un résultat de commande 'nmap' sur le réseau</h4></div></div><div class='image-wrapper'><img src='autres/est3.jpg' alt='Image 3'><div class='description'><h4 style='margin:auto;'>Extrait d'une commande 'hashcat' qui me permet de déchiffrer</h4></div></div></div><br><p>Quelques fois dans la journée, pour changer de domaine sur lequel je travaillais, j’ai participé à la mise en route des trains sur une maquette que l’organisation avait mise en place. En effet, en tant que « pays », nous avions à charge une entreprise ferroviaire que nous devions faire tourner pour gagner des points lors de cet exercice.</p><div class='image-wrapper'><img src='autres/est4.png' alt='Image 4'><div class='description'><h4 style='margin:auto;'>Maquette de train à laquelle je travaillais (à droite), image extraite d'un reportage</h4></div></div><p><br><b>Mercredi :</b> Pour ce dernier jour, j’ai continué à travailler sur les mêmes sujets que les jours précédents. Cependant, j’ai passé la plupart de mon temps à travailler dans l’ambassade du pays adverse sur un challenge de récupération d’informations par ondes radio à l’aide d’un clavier et d’un « dongle » avec Arnaud. Nous avons perdu beaucoup de temps car nous pensions que c’était du Bluetooth, le type d’ondes utilisées. Puis nous avons commis l’erreur d’écouter l’équipe adverse qui nous a mis sur une mauvaise piste pendant plusieurs heures. Après maintes tentatives, nous avons réussi à récupérer les données entrées sur le clavier sur notre PC.</p><div class='image-wrapper'><img src='autres/est5.jpg' alt='Image 5'><div class='description'><h4 style='margin:auto;'>Maquette de l'ambassade dans laquelle je travaillais</h4></div></div><p><br><b>Mon ressenti :</b> J’ai adoré vivre cette expérience grandeur nature d’une cyberattaque. Je suis extrêmement reconnaissante envers toute l’équipe organisatrice de cet évènement, mais aussi tous les élèves, qui ont joué le jeu, que ce soit notre équipe ou les équipes adverses. J’ai continué à apprendre pendant ces quelques jours et j’ai hâte de continuer à travailler et apprendre dans ce domaine que j’affectionne particulièrement.</p>"
+            break;
+        case 3:
+            texte = "<p><b style='color:#c40000;'>Du point de vue de Charles</b><br> <br> <b>Préparation : </b>Le CHE est un exercice qui aborde de nombreux aspects de la cybersécurité, tout cela dans des conditions les plus proches du réel possible. Il fallait donc se former en amont pour être le plus performant possible durant l'exercice et pouvoir apporter une plus-value à mon équipe. Pour cela, j'ai décidé d'essayer d'acquérir les connaissances de bases dans un maximum de sujets possibles. Cela permettrait de ne pas être complètement perdu quand une épreuve se présenterait, et permettrait de gagner du temps sur l'apprentissage plus détaillé par la suite.<br><br><b>TryHackMe </b> <br><br>J'ai donc commencé mon apprentissage sur TryHackMe qui est un site contenant de nombreux cours de cybersécurité avec des mises en pratique régulières de ce qui est enseigné. Si on ne sait pas par quoi commencer, le site contient de nombreux parcours guidés, pour tous les niveaux et plus ou moins spécialisés. J'ai personnellement choisi le parcours 'complete beginner', même si de nombreux sujets avaient déjà été abordé en cours, la partie pratique permettait de consolider les acquis.<br><br>Ce parcours aborde la majorité des sujets importants pour débuter: l'utilisation de linux et des lignes de commandes, les réseaux et l'exploitation de failles dans ces derniers, l'exploitation web, la cryptographie, l'élévation de privilège sur windows et linux et l'exploitation de failles diverses et variées. Il y a également des modules pour apprendre à utiliser des outils qui se prouveront très utiles par la suite sur des scénarios plus concrets comme Burp, Nmap (très important pour le CHE, en attaque comme en défense), john the ripper, hashcat et metasploit pour ne citer que les plus importants.<br><br>Pour accéder à l'enssemble des cours, il faut payer un abonnement, mais l'ensemble des connaissances sont accessibles gratuitement sur internet, il n'y aura juste pas de chemin preçis à suivre et pas de pratique à la fin des cours.<br><br> <b>RootMe</b> <br><br>Après avoir fini les cours d'indroductions, je me suis concentré sur root me. RootMe met à disposition des challenges dans une grande variété de domaines de la cybersécurité. Pour suivre mon idée initiale d'avoir des connaissances de bases dans le plus de domaine possible, j'ai réalisé les premiers challenges de chaque sujet. Cela m'a permis de mettre en pratique l'utilisation des outils qui étaient abordés sur TryHackMe et d'en découvrir d'autres. Je me suis ensuite concentré sur l'exploitation d'application web coté serveur. J'ai fait ce choix car le web est au coeur de notre vie quotidienne, nous parcourons des sites internet tous les jours, il est donc très probable de tomber sur un site web contenant des failles dans des situations plus concrètes, et donc, pendant le CHE. Cela m'a donc permis de travailler sur de nombreuses failles comme les failles HTTP, l'upload de fichier, GraphQL, les injection SQL / XSS / LDAP, les JWT, etc.<br><br><b>Lundi : </b>Le premier jour a surtout servi à nous familiariser avec l'infrastructure, les règles, découvrir les installations et établir une stratégie. La première chose à faire était de comprendre la configuration réseau de notre équipe et de commencer à scanner le réseau pour trouver de potentielles machines ennemies. Le réseau de la tente de LIO était en fait séparé en plusieurz sous réseaux, chacun contenant un unique terminal avec une unique adresse ip publique. Cela permet de limiter les dégats si une de nos adresse IP est identifiée par la défense ennemie. Il n'y avait pas assez de terminaux pour tout le monde, nous nous sommes donc reparti en binômes, une personne sur le terminal et l'autre qui fait des rechercher sur son ordi personnel pour l'assister. Nous avons commencé par faire des recherches grâce au serveur DNS qui était présent dans l'infrastructure. Effectivement, ce serveur dont nous connaissions l'adresse IP nous a permis de récupérer nos premièrse adresses IP ennemies afin de commencer la recherche de failles et donc de flags. Avec mon binôme, nous avons particulièrement travaillé sur le site de presse des Anumeric, le times new roman. Nous avons trouvé une faille dans la configuration de la base de données, ce qui nous a permis de récupérer son contenu et donc des couples utilisateur/mot de passe.<br><br><b>Mardi :</b> Le deuxième jour, nous avons continué à faire beaucoup de scans avec nmap, en essayant d'être le plus discret possible pour ne pas se faire bannir nos IP. Chaque nouvelle IP ennemie était renseigné sur la cartographie du réseau ennemi et analysée pour trouver des failles. Vers la fin du deuxième jour, un sac à dos contenant une carte Raspbeyry Pi avec une antenne a été retrouvé dans l'ambassade Anumeric sur notre territoire, je me suis donc occupé de récupérer cette carte et d'analyser son contenu et son fonctionnement. En analysant le code présent, je me suis rendu compte que cette carte servait à établir un canal sécurisé chiffré entre l'ambassade et le pays ennemi. Le but à présent était donc de trouver une faille dans le processus de chiffrement utilisé et de faire un script pour automatiser le déchiffrement des communications ennemies. Cette tâche m'a pris toute la soirée et toute la nuit.<br><br><b>Mercredi :</b> Après avoir dormi 2 heures, il étant temps d'exploiter le canal sécurisé ennemie. Les Anumeric envoyaient des documents Word par mail contenant des instructions pour leurs robots dans une usine. Ces documents world étaient compressés dans une archive nécessitant un mot de passe pour y accéder, ce mot de passe était envoyé via ce canal chiffré. Le but était donc d'écrire un malware qui permettrait de mettre hors service ce robot, ce dernier serait injecté dans un document Word envoyé par l'ennemie. Quand l'opérateur ouvre le document Word sur son ordinateur, il serait identique à celui d'origine, mais exécuterait en réalité le malware en arrière-plan. j'avais donc le vecteur de mon attaque, mais il me manquait le payload, pour écrire le payload, il fallait trouver la documentation du robot ciblé. Cette documentation était présente sur une machine dans le réseau Anumeric, nous devions donc trouver cette machine. Le fait de trouver cette machine et donc les documents nous a malheureusement pris toute la fin de la nuit et la matinée, je n'ai donc pas pu finaliser ce malware. Chercher cette machine nous a quand même permis de découvrir un peu plus du réseau ennemi, en particulier un Active Directory, qui contenait des informations sur beaucoup de machines Anumeric.<br><br><b>Mon ressenti :</b>Cet événement était vraiment une éxperience unique. Une fois fini, on se rend compte de la chance qu'on a eu de pouvoir participer à un événement demandant autant de préparations, de logistiques et de personnels pour pouvoir voir le jour. Le fait de travailler en équipe dans une situation proche du réel permet de se rendre compte que ce n'est pas possible de tout faire tout seul et d'être expert dans tous les domaines. Chaque membre de l'équipe avait au moins une connaissance sur un sujet que personne d'autre n'avait et qui nous a permis d'avancer. <br><br>Le fait d'être dans cette ambiance de compétition, de crise et d'inconfort (dû au manque de place, de sommeil, d'information) nous a, je pense, tous permis de faire d'énormes progrès, aussi bien au niveau de la technique, qu'a niveau de l'appréhension l'organisation de notre travail.</p>";
+            break;
+        case 4:
+            texte = "<p><b style='color:#005fc4;'>Du point de vue d'Arnaud</b> <br> <br> <b>Préparation :</b> Afin de me préparer pour le Cyber Humanum Est (CHE), j'ai relevé de nombreux défis sur Root Me afin de me familiariser avec des outils de Kali Linux (comme Burp Suite, Wireshark, Hashcat, etc.). Je me suis principalement concentré sur les défis de cryptographie, de stéganographie, de serveur web et de client web. Mon score sur Root Me est passé de 0 à 1130 points. <br><br><b>Lundi :</b> Durant le premier jour, notre mission principale était de découvrir et de cartographier le réseau. Cela nous a pris une bonne partie de la journée. En fin d’après-midi, j'ai également suivi une formation rapide sur les logiciels d'administration des automates Siemens et des pare-feu GÉOÏDE. Mon bilan de cette journée est que j'ai manqué d'expérience, notamment en ce qui concerne l'utilisation de la commande 'nmap'. J'ai donc passé ma soirée à apprendre comment l'utiliser correctement afin d'être prêt le lendemain. De plus, nous avons discuté d'une stratégie pour commencer à attaquer les adversaires.<br><br> <b>Mardi :</b> Le lendemain matin, je me suis introduit dans une des tentes adverses afin de poser un câble Ethernet sur leur routeur. Notre stratégie était de lancer une attaque depuis leur réseau afin de récupérer un maximum de drapeaux et de faire tomber certaines structures adverses. Malheureusement, l'attaque n'a pas eu lieu car notre équipe a mis trop de temps à préparer une offensive, ce qui a permis aux adversaires de découvrir le câble sur leur routeur. Un des problèmes que cette découverte a posés était que le câble constituait une preuve contre nous, il a donc fallu le récupérer le plus rapidement possible. J'ai donc élaboré un plan en détournant un journaliste présent sur les lieux afin qu'il aille récupérer le câble à notre place. Le plan s'est bien déroulé mais les militaires présents sur le site m'ont repéré, j'ai donc été en prison pendant 30 minutes. Le reste de la journée, j'ai participé aux missions de Siemens qui consistaient à sécuriser leurs automates. Le soir, j'ai réalisé les CTF de l'ambassade dans lesquels j'ai pu récupérer les données d'une carte d'authentification avec une puce RFID et les transférer dans une autre carte. J'ai aussi commencé un défi qui consistait à pirater un clavier Bluetooth à distance afin de récupérer les entrées de celui-ci. Je suis ensuite allé me coucher à 4h du matin. <br><br> <b>Mercredi :</b> Je me suis réveillé vers 6h30 et j'ai repris directement le défi du clavier, mais j'étais très fatigué et ma concentration était vraiment réduite. J'ai passé la journée à essayer de résoudre le défi, ce que j'ai réussi à faire vers 15h (j'ai passé énormément de temps dessus). <br><br> <b>Mon ressenti :</b> Cette expérience était unique en son genre, et je suis vraiment reconnaissant envers l'ensemble des organisateurs d'avoir pu nous offrir une expérience comme celle-ci. J'ai pu apprendre à dépasser mes limites, observer et utiliser d'autres techniques de piratage, plus physiques comme l'ingénierie sociale par exemple. J'ai le sentiment d'avoir énormément progressé durant ces 3 jours. Je ne retiens que du positif de cette expérience.</p>";
+            texte = ""
+            break;
+        default:
+            texte = "Sélection invalide.";
+    }
+    document.getElementById("texte").innerHTML = texte;
+    }
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
   </script>
