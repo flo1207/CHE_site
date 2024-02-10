@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <title>Présentation de l'équipe</title>
+    <title>CHE - I2BW - 2024</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -151,7 +151,7 @@
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 8px;
-            padding: 1em;
+            padding: 0.5em;
             margin: 1em;
             width: 200px;
             text-align: center;
@@ -164,6 +164,17 @@
             border-radius: 50%; /* Crée un cercle avec un bord arrondi à 50% */
             margin: auto;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   
+        }
+
+        .image-container2{
+            height: 100px;
+            margin: auto;
+        }
+
+        .image-container2 img{
+            width: 100%; /* Ajustez la largeur et la hauteur selon vos besoins */
+            height: 100%;
+            
         }
 
         .image-container img {
@@ -216,7 +227,56 @@
         }
 
         footer{
-            height: 50px;
+            height: 100px;
+        }
+
+        .prez{
+            padding: 20px;
+            padding-left: 110px;
+            padding-right: 110px;
+        }
+
+        .compet{
+            padding: 40px;
+            padding-left: 110px;
+            padding-right: 110px;
+            padding-bottom: 0px;
+        }
+
+        .retex{
+            padding: 40px;
+            padding-left: 110px;
+            padding-right: 110px;
+        }
+
+        .pix{
+            padding-top: 40px;
+            padding-bottom: 20px;
+            display:flex;
+        }
+
+        .pix2{
+            padding-top: 50px;
+            padding-bottom: 50px;
+            display:flex;
+        }
+
+        .img-txt{
+            cursor: pointer;
+            height: 120px;
+            width: 120px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .img-txt:hover{
+            transform: scale(1.2);
+        }
+
+        #texte{
+            margin: auto;
+            padding: 20px;
+            padding-left: 110px;
+            padding-right: 110px;
         }
 
       
@@ -230,7 +290,7 @@
         
         <div class="container">
             <div>
-                <h4 class="text-white mb-20 text-uppercase">Projet Cyber Humanum Est</h4>
+                <h4 class="text-white mb-20 text-uppercase">Projet Cyber Humanum Est 2024</h4>
                 <h1 class="text-uppercase text-white">Notre Experience</h1>
                 <!-- <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
                 or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
@@ -243,8 +303,8 @@
             <ul class="navbar-nav">
                 <li><a href="#team">Notre équipe</a></li>
                 <li><a href="#site">Les sites d'entrainement</a></li>									
-                <li><a href="#secvice">Les préparatifs</a></li>
-                <li><a href="#gallery">Le jour J</a></li>
+                <li><a href="#compet">La compétition</a></li>
+                <li><a href="#retex">Retour d'expérience</a></li>
             </ul>
           </div>
     </header>
@@ -256,15 +316,24 @@
                     <img src="autres/flo.png" alt="flo">
                 </div>
                 <h2>Florian IMPROVISATO</h2>
-                <p>Poste du Membre 1</p>
+                <p>
+                    <b>Lieutenant</b>
+                    <br>
+                    Lutte Informatique Défensive
+                </p>
+
             </div>
     
             <div class="member">
                 <div class="image-container">
-                    <img src="autres/none.png" alt="estelle">
+                    <img src="autres/estelle.png" alt="estelle">
                 </div>
                 <h2>Estelle <br> BABY</h2>
-                <p>Poste du Membre 2</p>
+                <p>
+                    <b>Soldat</b>
+                    <br>
+                    Lutte Informatique Offensive
+                </p>
             </div>
     
             <div class="member">
@@ -272,7 +341,11 @@
                     <img src="autres/charles.jpeg" alt="charles">
                 </div>
                 <h2>Charles WATRELOT</h2>
-                <p>Poste du Membre 3</p>
+                <p>
+                    <b>Soldat</b>
+                    <br>
+                    Lutte Informatique Offensive
+                </p>
             </div>
     
             <div class="member">
@@ -280,12 +353,31 @@
                     <img src="autres/arnaud.jpeg" alt="arnaud">
                 </div>
                 <h2>Arnaud BRUGERE</h2>
-                <p>Poste du Membre 4</p>
+                <p>
+                    <b>Soldat Hybride</b>
+                    <br>
+                    Lutte Informatique Défensive / Offensive
+                </p>
             </div>
     
         </section>
+        
+        <div class="prez" id="site">
+            <h2>Avant la compétition - La préparation</h2>
+            <p>
+                Les préparations ont pu avoir lieu lors des semaines dédiées au projet Cyber Humanum Est. Nous avons pu organiser lors de 
+                ces semaines, des journées où l'on se focalisait sur différents aspects de la cyber, sur des site d'entrainement comme RootMe.
+                Un kick Off fut d'ailleurs organisé, il s'agit là d'une après midi consacrée à la découverte du sujet du CHE de cette année
+                qui nous a permis de découvir notre équipe. On put alors mieux comprendre les objectifs de la compétition. 
+                <br>
+                <br>
+                Lors de cette journée on a eu la chance d'avoir une série de challenges RootMe pro réalisables pendant quelques jours de quoi se mettre
+                en jambe pour la compétition de février. Les mois suivants furent dédiés au perfectionnement en parrallèe des cours aux différentes
+                catégories de défis de cyber sécurité.
+            </p>
+        </div>
     
-        <div class="rootme" id="site">
+        <div class="rootme" >
 
             <div class="img_rootme">
                 <img src="autres/rootme.jpeg" alt="rootme">
@@ -361,6 +453,76 @@
 
         </div>
 
+        <div class="compet" id="compet">
+            <div>
+                <h2>La compétition - Qui organise ?</h2>
+                <p>
+                    L'événement a été co-organisé par la Base de Défense de Nancy, Lorraine INP, 
+                    le Commandement de la Cyberdéfense (COMCYBER) du ministère des Armées, et l’Université de Lorraine. 
+                    <br>
+                    <br>
+                    Nous étions environ une centaine d'étudiants tous plongés dans un conflit entre deux nations fictives, 
+                    <b>Anumérique</b>
+                    et 
+                    <b>Cryptanga</b>, mêlant les aspects physiques et virtuels. Ambassades, réseaux sociaux, infrastructures vitales, malwares... 
+                    Tout en étant sous la menace des différents hackeurs et mercenaires qui tentairent de faire basculer les éléctions et 
+                    la gestion des entreprises critiques des différents pays !
+                </p>
+            </div>
+            
+            <div class="pix">
+                <div class="image-container">
+                    <img src="autres/BDN.png" alt="BND">
+                </div>
+
+                <div class="image-container">
+                    <img src="autres/COM.png" alt="COM">
+                </div>
+
+                <div class="image-container2">
+                    <img src="autres/UNIV.png" alt="UNIV">
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="retex" id="retex">
+            <div>
+                <h2>Retour d'experience</h2>
+                <p>
+                    Chaque membre de l'équipe avait un rôle différent et nous avons tous effectuer des activités différentes
+                    tout au long de la compétition au sein de <b>Cryptanga</b>. 
+                    <br>
+                    <br>
+                    Pour découvrir ce que chacun a pu faire vous pouvez <b>cliquer sur le profil</b> et en apprendre plus sur son experience
+                    lors du Cyber Humanum Est 2024.
+                </p>
+            </div>
+            
+            <div class="pix2">
+                <div class="image-container img-txt" onclick="afficherTexte(1)">
+                    <img src="autres/flo.png" alt="flo">
+                </div>
+
+                <div class="image-container img-txt" onclick="afficherTexte(2)">
+                    <img src="autres/estelle.png" alt="estelle">
+                </div>
+
+                <div class="image-container img-txt" onclick="afficherTexte(3)">
+                    <img src="autres/charles.jpeg" alt="charles">
+                </div>
+
+                <div class="image-container img-txt" onclick="afficherTexte(4)">
+                    <img src="autres/arnaud.jpeg" alt="arnaud">
+                </div>
+            </div>
+
+            <div id="texte"></div>
+
+        </div>
+
     </main>
 
     <footer>
@@ -402,4 +564,26 @@
         .scroll(boxtothetop);
       boxtothetop();
     });
+
+
+    function afficherTexte(personne) {
+  var texte = "";
+  switch(personne) {
+    case 1:
+      texte = "<p><b>Du point de vue de Florian</b><br> <br> <b>Préparation :</b> Pour préparer l'évenement j'ai principalement utiliser des sites d'entrainement comme RootMe et TryHackMe. J’ai plutôt fait le paris d’avoir des connaissances solides dans tous les domaines importants et pas d’être spécialisé dans un seul. Cela m'a beaucoup aidé à avoir une vision globale des menaces et vulnérabilités que l'on aurait pu rencontrer lors du CHE. J'ai pu ainsi me familiariser et me perfectionner avec des outils que je n'utilisais pas ou peu comme Burp ou nmap. <br> <br><b>Lundi :</b> Après une présentation globale de l'évenement, j'ai pu découvir le lieu où nous allions passer les trois prochains jours. Je me suis porté volontaire pour être sous-Capitaine / Lieutenant de ma brigade de lutte informatique défensive (LID) c'est pourquoi j'ai dù me familiariser avec les personnes que j'allais devoir diriger et suivre l'avancée. Après avoir tous fait connaissance, nous avons tout de suite entamé la phase de cartographie de notre réseau pour y découvrir les machines ainsi sur les différents équipements que nous avions. Nous avons ainsi découvert différents sites web avec leur vulnérabilités ainsi que des firewalls dont les mots de passes n'étaient pas sécurisés. Le reste de la journée fut ainsi consacré au changement des mots de passes et à la recherche de vulnérabilité des sites et services que nous avions. Nous avons aussi subit des attaques physiques normalement interdites qui nous ont donné un coup au morale mais mon objectif était de rebondir et se demander comment nous pouvions en faire une force. Il a fallut aussi gérer les heures de sommeil et de déjeuner grâce à un planning dont je me suis occupé. <br> <br> <b>Mardi :</b>Dès la reprise de la compétiton Arnaud et moi avions tenté de nous connecter au réseau des Anumérique en installant un cable ethernet directement sur le routeur de leur tente de commandement. Malheureusement cela n'a pas pu aboutir, j'ai donc continuer à gérer la défense aen compagnie de l'autre lieutenant. Les principales mission de ce jour étaient la mise ne place d'une mise à jour pour un site wordpresse obsolet et la modification des mots de passe SSH trop faciles à trouver. De même pour les PFsense qui n'avaient pas de mots de passes robustes. De même il fallut commencer à préparer les rondes de nuit et bien avoir en tête qui serait présent ou non et quand. Nous avions ensuite pour projet d'installer sur les ordinateurs d'attaque et sur les firewall des antivirus afin de protéger les éventuelles attaques ennemies. Ceci fut achever peu avant minuit.<br><br> <b>Mercredi :</b> De minuit à 6h du matin nous avons tenter de profiter d'une vulnérabilité 0 day sur un de nos service glpi précédemment attaqué par un membre des admins afin d'y installer un reverse shell et prendre la main à distance sur le site web. Après de longue phase de recherche Sami, un attaquant à reussi à reprendre la main et changer les mots de passe et remettre notre site en fonction comme il se doit. Nous en avons profité pour exploiter cette même vulnérabilité chez les adversaires et déphaser leur site. Après une pause dodo de près de 1h. J'ai continué à verifier que nos site n'étaient pas attaqués. <br> <br> <b>Mon ressenti :</b> Pour ma part j'ai adoré le fait de devoir gérer une équipe et les actions qu'on a dû mener. Je me rend compte de la chance que l'on a eu de pouvoir participer à un tel évenement et je suis fière des actions que l'on a méné et de la gestion des moments de crise avec les capitaines et les membres de l'équipe. </p>";
+      break;
+    case 2:
+      texte = "<p><b>Du point de vue d'Estelle</b><br> <br>Texte pour personne 2.</p>";
+      break;
+    case 3:
+      texte = "<p><b>Du point de vue de Charles</b><br> <br> Préparation : </p>";
+      break;
+    case 4:
+      texte = "<p><b>Du point de vue d'Arnaud</b> <br> <br> <b>Préparation :</b> Afin de préparer le Cyber Humanum Est (CHE), j’ai fait beaucoup de challenge Root Me afin de me familiariser avec des outils issus de Kali Linux (comme Burp Suite, Wireshark, Hashcat, etc. ). Je me concentrais principalement sur les challenges de type Cryptographie, Sténographie, Web Serveur et Web Client. Mon score Root Me est passé de 0 à 1130 points. <br><br><b>Lundi :</b> Durant le premier jour, la mission principale était la découverte du réseau et la cartographie de ce dernier. Cela nous a pris une bonne partie de la journée. En fin d’après-midi, j’ai pu aussi avoir une formation rapide aux logiciels d’administration des automates Siemens et des pare-feu GÉOÏDE. Mon bilan de cette journée est que j’ai manqué d’expérience notamment au niveau de l’utilisation de la commande “nmap”, j’ai donc passé ma soirée à apprendre comment bien l’utiliser afin d’être en prêt le lendemain. De plus, nous avons discuté d’une stratégie afin de commencer à attaquer les adversaires.<br><br> <b>Mardi :</b> Le lendemain matin, je me suis introduit dans une des tentes adverses afin de poser un câble ethernet sur leur routeur, notre stratégie était de lancer une attaque depuis leur réseau afin de récupérer un maximum de flag et de faire tomber certaines structures adverses. Malheureusement, l’attaque n’a pas eu lieu car notre équipe à mettre trop de temps à préparer une offensive, temps qui a permis aux adversaires de découvrir le câble sur leur routeur.Un des soucis que cette découverte à poser était que le câble constituait une preuve contre nous, il a donc fallu le récupérer le plus vite possible. J’ai donc élaboré un plan en détournant un journaliste présent sur les lieux afin qu’il aille récupérer le câble à notre place.Le plan s’est bien déroulé mais les militaires présents sur le site m’ont repéré, j'ai donc été en prison pendant 30 minutes. Le reste de la journée, j’ai participé aux missions de Siemens qui consistaient à sécuriser leurs automates. Le soir, j’ai réalisé les CTF de l’ambassade dans laquelle j’ai pu récupérer les données d’une carte d’authentification avec une puce RFID et les transférer dans une autre carte. J’ai aussi pu commencer un challenge qui consistait à hacker un clavier bluetooth à distance afin de récupérer les entrées de ce dernier. Je suis ensuite allé me coucher à 4h du matin. <br><br> <b>Mercredi :</b> Je me suis réveillé vers 6h30, j’ai directement repris le challenge du clavier mais j'étais très fatigué et ma concentration était vraiment réduite. J’ai passé la journée à essayer de résoudre le défi, chose que j'ai réussi à faire vers 15h (j’ai passé énormément de temps dessus). <br><br> <b>Mon ressenti :</b> Cette expérience était unique en son genre, et je suis vraiment reconnaissant envers l’ensemble des organisateurs d’avoir pu nous offrir une expérience comme celle-ci. J’ai pu apprendre à surpasser mes limites, observer et utiliser d’autres techniques de hacking, plus physique comme l’ingénierie sociale par exemple. J’ai le sentiment d’avoir énormément progressé durant ces 3 jours. Je ne tire que du positif de cette expérience.</p>";
+      break;
+    default:
+      texte = "Sélection invalide.";
+  }
+  document.getElementById("texte").innerHTML = texte;
+}
   </script>
