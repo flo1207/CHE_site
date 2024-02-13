@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Présentation de l'équipe</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>CHE - I2BW - 2024</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,11 +14,130 @@
             background-color: #f4f4f4;
         }
 
+        p{
+            text-align: justify;
+        }
+        
+        .member p{
+            text-align: center;
+        }
+
         header {
-            background-color: #333;
+            background: url('autres/baniere.jpeg') center/cover;
+            /* color: white;
+            text-align: center;
+            padding: 10em 0;
+            position: relative;
+            filter: blur(2px); */
+            position: relative;
+            height: 400px; /* Ajustez la hauteur selon vos besoins */
+            display: block;
+            justify-content: center;
+            align-items: center;
             color: white;
             text-align: center;
-            padding: 1em;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 10px;
+            border-radius: 20px;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: inherit;
+            filter: blur(2px); /* Applique un flou au pseudo-élément */
+            border-radius: 20px;
+            background: rgba(0,0,0,.2);
+        }
+
+        .container {
+            position: relative;
+            z-index: 1; /* Place le contenu au-dessus du pseudo-élément flou */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            height: 90%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            display: flex;
+
+        }
+
+        .collapse{
+            position: relative;
+            z-index: 1; /* Place le contenu au-dessus du pseudo-élément flou */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            display: flex;
+            bottom: 0;
+            left: 0;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        #boxThis.box {
+            margin-top: 0;
+            position: fixed;
+            bottom: 0;
+            z-index: 9999;
+            width: -webkit-fill-available;
+            padding: 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            margin-left: 40px;
+            margin-right: 40px;
+            background: url('autres/baniere.jpeg') center/cover;
+            font-size: 0.85em;
+            -webkit-animation: anim 1s ;
+            animation: anim 1s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);        
+        }
+
+        @-webkit-keyframes anim {
+            0%  {opacity: 0%;}
+            100% {opacity: 100%}
+        }
+        @keyframes anim {
+            0%  {opacity: 0%;}
+            100% {opacity: 100%}
+        }
+
+        .collapse ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        .collapse li, .collapse a {
+            list-style: none;
+            padding: 0;
+            text-decoration: none;
+            color: white;
+            display: inline;
+            font-weight: bold;    
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-size: 1.1em;
+        }
+
+        .collapse a:hover{
+            color: black;
+            text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+        }
+        
+
+        header h4 {
+            margin: 0;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         section {
@@ -28,59 +148,560 @@
         }
 
         .member {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1em;
+            background-color: none;
+            border-radius: 20px;
+            padding: 0.5em;
             margin: 1em;
             width: 200px;
             text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         }
 
-        img {
-            border-radius: 50%;
-            max-width: 150px;
-            max-height: 150px;
-            margin-bottom: 1em;
+        .image-container {
+            width: 100px; /* Ajustez la largeur et la hauteur selon vos besoins */
+            height: 100px;
+            overflow: hidden;
+            border-radius: 50%; /* Crée un cercle avec un bord arrondi à 50% */
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   
         }
+
+        .image-container2{
+            height: 100px;
+            margin: auto;
+        }
+
+        .image-container2 img{
+            width: 100%; /* Ajustez la largeur et la hauteur selon vos besoins */
+            height: 100%;
+            
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajuste la taille de l'image pour remplir le conteneur sans déformation */
+            border-radius: 50%; /* Assure que l'image suit la forme du conteneur circulaire */
+        }
+
+        .rootme , .try {
+            display: flex;
+            margin: 20px auto;
+            padding: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .txt_rootme , .txt_try{
+            display: block;
+            max-width: 800px;
+            border-radius: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: -20px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .img_rootme img, .img_try img{
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+            margin-top: -100px;
+        }
+
+        .img_try{
+            margin-bottom: auto;
+        }
+
+        .img_try img {
+            height: 200px;
+            box-shadow: none;
+            margin-top: 0px;
+            margin-left: -100px;
+        }
+
+        .txt_try{
+            margin-left: 0px;
+        }
+
+        footer{
+            height: 100px;
+        }
+
+        .prez{
+            padding: 20px;
+            padding-left: 110px;
+            padding-right: 110px;
+        }
+
+        .compet{
+            padding: 40px;
+            padding-left: 110px;
+            padding-right: 110px;
+            padding-bottom: 0px;
+        }
+
+        .retex{
+            padding: 40px;
+            padding-left: 110px;
+            padding-right: 110px;
+        }
+
+        .pix{
+            padding-top: 40px;
+            padding-bottom: 20px;
+            display:flex;
+        }
+
+        .pix2{
+            padding-top: 50px;
+            padding-bottom: 50px;
+            display:flex;
+        }
+
+        .img-txt{
+            cursor: pointer;
+            height: 120px;
+            width: 120px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .img-txt:hover{
+            transform: scale(1.2);
+        }
+
+        #texte{
+            margin: auto;
+            padding: 20px;
+        }
+
+        .image-wrapper {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .image-wrapper-est{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .image-wrapper img {
+            max-height: 500px;
+            max-width: -webkit-fill-available;
+            border-radius: 20px;
+            background-color: none;
+            border: none;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .image-wrapper h4 {
+            font-size: small;    
+        }
+
+        .description {
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img{
+            max-height: 400px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 20px;
+        }
+
+        .fade {
+            width: fit-content;
+            animation: fade 1.5s;
+        }
+
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            width: fit-content;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 24px;
+            padding: 10px;
+            text-align: center;
+            margin-top: -22px;
+            font-weight: bold;
+            font-size: 22px;
+            transition: 0.3s ease;
+            user-select: none;
+            margin-left: -50px;
+            margin-right: -50px;
+            border-radius: 30px;
+        }
+
+        .next { 
+            right: 0;
+        }
+
+        .prev:hover, .next:hover {
+            border-radius: 30px;
+            color: white;
+            background-color: rgba(132, 132, 132, 0.512);
+        }
+
     </style>
 </head>
 
 <body>
 
     <header>
-        <h1>Notre Équipe</h1>
+        
+        <div class="container">
+            <div>
+                <h4 class="text-white mb-20 text-uppercase">Projet Cyber Humanum Est 2024</h4>
+                <h1 class="text-uppercase text-white">Notre Experience</h1>
+                <!-- <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
+                or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                <a href="#" class="text-uppercase header-btn">Discover Now</a> -->
+            </div>
+
+        </div>
+        <div id="boxHere"></div>
+        <div class="collapse" id="boxThis">
+            <ul class="navbar-nav">
+                <li><a href="#team">Notre équipe</a></li>
+                <li><a href="#site">Les sites d'entrainement</a></li>									
+                <li><a href="#compet">La compétition</a></li>
+                <li><a href="#retex">Retour d'expérience</a></li>
+            </ul>
+          </div>
     </header>
 
-    <section>
-        <div class="member">
-            <img src="membre1.jpg" alt="Membre 1">
-            <h2>Nom du Membre 1</h2>
-            <p>Poste du Membre 1</p>
+    <main>
+        <section id="team">
+            <div class="member" style="color:white;background-color: #005fc4;">
+                <div class="image-container">
+                    <img src="autres/flo.png" alt="flo">
+                </div>
+                <h2>Florian IMPROVISATO</h2>
+                <p>
+                    <b>Lieutenant</b>
+                    <br>
+                    Lutte Informatique Défensive
+                </p>
+
+            </div>
+    
+            <div class="member" style="color:white;background-color: #c40000;">
+                <div class="image-container">
+                    <img src="autres/estelle.png" alt="estelle">
+                </div>
+                <h2>Estelle <br> BABY</h2>  
+                <p>
+                    <b>Soldat</b>
+                    <br>
+                    Lutte Informatique Offensive
+                </p>
+            </div>
+    
+            <div class="member" style="color:white;background-color: #c40000;">
+                <div class="image-container">
+                    <img src="autres/charles.jpeg" alt="charles">
+                </div>
+                <h2>Charles WATRELOT</h2>
+                <p>
+                    <b>Soldat</b>
+                    <br>
+                    Lutte Informatique Offensive
+                </p>
+            </div>
+    
+            <div class="member" style="color:white;background-color: #005fc4;">
+                <div class="image-container">
+                    <img src="autres/arnaud.jpeg" alt="arnaud">
+                </div>
+                <h2>Arnaud BRUGERE</h2>
+                <p>
+                    <b>Soldat</b>
+                    <br>
+                    Lutte Informatique Défensive
+                </p>
+            </div>
+    
+        </section>
+        
+        <div class="prez" id="site">
+            <h2>Avant la compétition - La préparation</h2>
+            <p>
+                Les préparations ont pu avoir lieu lors des semaines dédiées au projet Cyber Humanum Est. Nous avons pu organiser lors de 
+                ces semaines, des journées où l'on se focalisait sur différents aspects de la cyber, sur des site d'entrainement comme RootMe.
+                Un kick Off fut d'ailleurs organisé, il s'agit là d'une après midi consacrée à la découverte du sujet du CHE de cette année
+                qui nous a permis de découvir notre équipe. Cela nous permis de mieux comprendre les objectifs de la compétition. 
+                <br>
+                <br>
+                Lors de cette journée on a eu la chance d'avoir une série de challenges RootMe pro réalisables pendant quelques jours de quoi se mettre
+                en jambe pour la compétition de février. Les mois suivants furent dédiés au perfectionnement en parrallèe des cours aux différentes
+                catégories de défis de cyber sécurité.
+            </p>
+        </div>
+    
+        <div class="rootme" >
+
+            <div class="img_rootme">
+                <img src="autres/rootme.jpeg" alt="rootme">
+            </div>
+
+            <div class="txt_rootme">
+                <div style="display: flex; padding: 10px;">
+
+                    <section>
+                        <h2>À propos de RootMe</h2>
+                        <p>RootMe est une plateforme en ligne consacrée à la formation et à 
+                            la pratique des compétences en sécurité informatique.</p>
+            
+                        <h2>Fonctionnalités Principales</h2>
+                        <p>
+                            <b>Challenges de Sécurité</b> : RootMe propose une grande diversité de challenges 
+                            de sécurité informatique qui couvrent plusieurs catégories telles que le 
+                            reverse engineering, le cracking, le pentest, le steganography, etc. Ces challenges 
+                            permettent aux utilisateurs de mettre en pratique leurs compétences de manière interactive.
+                        </p>
+                        <p>
+                            <b>Cours en Ligne</b> : La plateforme propose également des cours en ligne portant sur différents 
+                            aspects de la sécurité informatique. Ces cours sont conçus pour tous les niveaux, des débutants 
+                            aux experts, et couvrent des sujets tels que la cryptographie, l'analyse de malware, les attaques web, etc.
+                        </p>
+                        <p>
+                            <b>Communauté Active</b> : RootMe dispose d'une communauté active d'apprenants et de professionnels de la sécurité 
+                            informatique. Les utilisateurs peuvent interagir, partager leurs expériences, poser des questions et collaborer 
+                            sur les challenges.
+                        </p>
+                    </section>
+            
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="member">
-            <img src="membre2.jpg" alt="Membre 2">
-            <h2>Nom du Membre 2</h2>
-            <p>Poste du Membre 2</p>
+        <div class="try">
+
+            <div class="txt_try">
+                <div style="display: flex; padding: 10px;">
+
+                    <section>
+                        <h2>À propos de Try hack me</h2>
+                        <p>
+                            TryHackMe est une plateforme en ligne qui propose des environnements virtuels 
+                            d'apprentissage pratique pour la sécurité informatique et le piratage éthique. 
+                        </p>
+            
+                        <h2>Fonctionnalités Principales</h2>
+                        <p>
+                            <b>Apprentissage pratique </b>: TryHackMe se distingue par son approche pratique de l'apprentissage. 
+                            Les utilisateurs peuvent accéder à des machines virtuelles préconfigurées, des salles de formation 
+                            et des challenges pour mettre en pratique leurs compétences en sécurité informatique.
+                        </p>
+                        <p>
+                            <b>Certifications</b> : TryHackMe propose également des parcours de formation spécifiques pour préparer 
+                            des certifications de sécurité informatique reconnues, ce qui peut être utile pour ceux qui cherchent 
+                            à valider leurs compétences.
+                        </p>
+                    </section>
+            
+
+                </div>
+
+            </div>
+
+            <div class="img_try">
+                <img src="autres/try.png" alt="tryhackme">
+            </div>
+
         </div>
 
-        <div class="member">
-            <img src="membre3.jpg" alt="Membre 3">
-            <h2>Nom du Membre 3</h2>
-            <p>Poste du Membre 3</p>
+        <div class="compet" id="compet">
+            <div>
+                <h2>La compétition - Qui organise ?</h2>
+                <p>
+                    L'événement a été co-organisé par la Base de Défense de Nancy, Lorraine INP, 
+                    le Commandement de la Cyberdéfense (COMCYBER) du ministère des Armées, et l’Université de Lorraine. 
+                    <br>
+                    <br>
+                    Nous étions environ une centaine d'étudiants tous plongés dans un conflit entre deux nations fictives, 
+                    <b>Anuméric</b>
+                    et 
+                    <b>Cryptanga</b>, mêlant les aspects physiques et virtuels. Ambassades, réseaux sociaux, infrastructures vitales, malwares... 
+                    Tout en étant sous la menace des différents hackeurs et mercenaires qui tentairent de faire basculer les éléctions et 
+                    la gestion des entreprises critiques des différents pays !
+                </p>
+            </div>
+            
+            <div class="pix">
+                <div class="image-container">
+                    <img src="autres/BDN.png" alt="BND">
+                </div>
+
+                <div class="image-container">
+                    <img src="autres/COM.png" alt="COM">
+                </div>
+
+                <div class="image-container2">
+                    <img src="autres/UNIV.png" alt="UNIV">
+                </div>
+            </div>
         </div>
 
-        <div class="member">
-            <img src="membre4.jpg" alt="Membre 4">
-            <h2>Nom du Membre 4</h2>
-            <p>Poste du Membre 4</p>
+
+
+
+        <div class="retex" id="retex">
+            <div>
+                <h2>Après la compétition - Retour d'expérience</h2>
+                <p>
+                    Chaque membre de l'équipe avait un rôle différent et nous avons tous effectuer des activités différentes
+                    tout au long de la compétition au sein de <b>Cryptanga</b>. 
+                    <br>
+                    <br>
+                    Pour découvrir ce que chacun a pu faire vous pouvez <b>cliquer sur le profil</b> et en apprendre plus sur son experience
+                    lors du Cyber Humanum Est 2024.
+                </p>
+            </div>
+            
+            <div class="pix2">
+                <div class="image-container img-txt" onclick="afficherTexte(1)">
+                    <img src="autres/flo.png" alt="flo">
+                </div>
+
+                <div class="image-container img-txt" onclick="afficherTexte(2)">
+                    <img src="autres/estelle.png" alt="estelle">
+                </div>
+
+                <div class="image-container img-txt" onclick="afficherTexte(3)">
+                    <img src="autres/charles.jpeg" alt="charles">
+                </div>
+
+                <div class="image-container img-txt" onclick="afficherTexte(4)">
+                    <img src="autres/arnaud.jpeg" alt="arnaud">
+                </div>
+            </div>
+
+            <div id="texte"></div>
+
         </div>
 
-        <!-- Ajoutez autant de membres que nécessaire -->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="autres/1.jpeg" >
+            </div>
+        
+            <div class="mySlides fade">
+                <img src="autres/2.png" >
+            </div>
+        
+            <div class="mySlides fade">
+                <img src="autres/4.jpeg">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="autres/est4.png">
+            </div>
 
-    </section>
+            <div class="mySlides fade">
+                <img src="autres/3.jpeg">
+            </div>
+        
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        
 
+    </main>
+
+    <footer>
+
+    </footer>
+
+    
+
+    
 </body>
 
 </html>
+
+
+<script>
+    function boxtothetop() {
+      var windowTop = $(window)
+        .scrollTop();
+      var top = $('#boxHere')
+        .offset()
+        .top;
+      if(windowTop > top) {
+        $('#boxThis')
+          .addClass('box');
+        $('#boxHere')
+          .height($('#boxThis')
+            .outerHeight());
+      } else {
+        $('#boxThis')
+          .removeClass('box');
+        $('#boxHere')
+          .height(0);
+      }
+    }
+    $(function() {
+      $(window)
+        .scroll(boxtothetop);
+      boxtothetop();
+    });
+
+    function afficherTexte(personne) {
+    var texte = "";
+    switch(personne) {
+        case 1:
+            texte = "<p><b style='color:#005fc4;'>Du point de vue de Florian</b><br> <br> <b>Préparation :</b> Pour préparer l'événement, j'ai principalement utilisé des sites d'entraînement comme RootMe et TryHackMe. J’ai plutôt fait le pari d’avoir des connaissances solides dans tous les domaines importants plutôt que d’être spécialisé dans un seul. Cela m'a beaucoup aidé à avoir une vision globale des menaces et vulnérabilités que l'on aurait pu rencontrer lors du CHE. J'ai ainsi pu me familiariser et me perfectionner avec des outils que je n'utilisais pas ou peu, comme Burp ou nmap. <br> <br><b>Lundi :</b> Après une présentation globale de l'événement, j'ai pu découvrir le lieu où nous allions passer les trois prochains jours. Je me suis porté volontaire pour être sous-Capitaine / Lieutenant de ma brigade de lutte informatique défensive (LID) et offensive (LIO), c'est pourquoi j'ai dû me familiariser avec les personnes que j'allais devoir diriger et suivre l'avancée. Notre équipe était plutôt hybride donc nous faisions en priorité de la défense et parfois de l'attaque. Après avoir tous fait connaissance, nous avons tout de suite entamé la phase de cartographie de notre réseau pour y découvrir les machines ainsi que les différents équipements que nous avions. Nous avons ainsi découvert différents sites web avec leurs vulnérabilités ainsi que des pare-feu dont les mots de passe n'étaient pas sécurisés. Le reste de la journée fut ainsi consacré au changement des mots de passe et à la recherche de vulnérabilités des sites et services que nous avions. Nous avons aussi subi des attaques physiques normalement interdites qui nous ont donné un coup au moral mais mon objectif était de rebondir et se demander comment nous pouvions en faire une force. Il a fallu aussi gérer les heures de sommeil et de déjeuner grâce à un planning dont je me suis occupé. <br> <br> <b>Mardi :</b> Dès la reprise de la compétition, Arnaud et moi avons tenté de nous connecter au réseau des Amériques en installant un câble Ethernet directement sur le routeur de leur tente de commandement. Malheureusement, cela n'a pas abouti, j'ai donc continué à gérer la défense avec l'autre lieutenant. Les principales missions de ce jour étaient la mise en place d'une mise à jour pour un site Wordpress obsolète et la modification des mots de passe SSH trop faciles à trouver. De même pour les PFsense qui n'avaient pas de mots de passe robustes. Il a aussi fallu commencer à préparer les rondes de nuit et bien avoir en tête qui serait présent ou non et quand. Nous avions ensuite pour projet d'installer sur les ordinateurs d'attaque et sur les pare-feu des antivirus afin de protéger les éventuelles attaques ennemies. Ceci fut achevé peu avant minuit.<br><br> <b>Mercredi :</b> De minuit à 6h du matin, nous avons tenté de profiter d'une vulnérabilité 0 day sur un de nos services GLPI précédemment attaqué par un membre des admins afin d'y installer un reverse shell et prendre la main à distance sur le site web. Après de longues phases de recherche, Sami, un attaquant, a réussi à reprendre la main et changer les mots de passe et remettre notre site en fonction comme il se doit. Nous en avons profité pour exploiter cette même vulnérabilité chez les adversaires et déphaser leur site. Après une pause dodo d'environ 1 heure, j'ai continué à vérifier que nos sites n'étaient pas attaqués. <br> <br> <b>Mon ressenti :</b> Pour ma part, j'ai adoré le fait de devoir gérer une équipe et les actions que nous avons dû mener. Je me rends compte de la chance que nous avons eue de pouvoir participer à un tel événement et je suis fier des actions que nous avons menées et de la gestion des moments de crise avec les capitaines et les membres de l'équipe. </p>";
+            break;
+        case 2:
+            texte = "<p><b style='color:#c40000;'>Du point de vue d'Estelle</b><br><br><b>Préparation :</b> En préparation de cet évènement, j’ai réalisé de nombreux CTF (Capture The Flag) sur « Root-Me » principalement, mais j’ai aussi fait de l’OSINT sur une plateforme dédiée. De plus, j’ai réalisé quelques CTF sur le module mis en place par l’entreprise « Soteria-Lab » à Polytech. Réaliser tous ces CTF m’a permis d’acquérir de nombreuses compétences dans différents domaines. Ceux sur le site « Root-Me » m’ont permis d’améliorer mes compétences techniques dans différents domaines tels que le réseau, la stéganographie, la cryptographie ainsi que le web principalement. L’OSINT quant à elle m’a fait comprendre l’importance de tout ce qui est sur l’internet ainsi que la facilité à retrouver certaines informations que l’on pourrait penser cachées.<br><br><b>Lundi :</b> Durant ce premier jour, nous avons principalement travaillé sur du réseau, découverte du réseau, le nôtre principalement ainsi que le leur vers la fin de la journée. Cela ne nous a pas empêchés de continuer la découverte de notre réseau sur les jours suivants. Pour ma part, j’ai passé la plupart de mon temps à scanner le réseau adverse, découvrir les ports ouverts, et explorer les protocoles basés sur ceux-ci en me concentrant principalement sur les ports http, MySQL qui pouvaient donner le plus de flags et d’informations sur l’équipe adverse. Les sites web étant la plupart du temps en 3 lettres suivies des 3 premières lettres de l’équipe, nous avons aussi découvert des sites web adverses en suivant cette logique. Une fois découverts, je me suis concentrée sur la recherche de failles sur ceux-ci. Vers la fin de la journée, c’était plus difficile de travailler, car les organisateurs nous attaquaient et éteignaient nos PC à l’aide d’un script bash, nous étions donc un peu ralentis.</p><div class='image-wrapper'><img src='autres/est1.jpg' alt='Image 1'><div class='description'><h4 style='margin:auto;'>Résultat de l'attaque de l'équipe organisatrice</h4></div></div><p><br><b>Mardi :</b> J’ai continué mon travail de scan du réseau, analyse et recherche de failles sur les sites web trouvés, j’ai aussi fait un peu de cryptographie lorsque je trouvais des chaînes de caractères encodées, en utilisant hashcat. Cependant, la plupart étaient en MD5 ce qui ne fut pas très difficile à déchiffrer. J’ai aussi réussi à me connecter à plusieurs sites avec les identifiants de base qui n’avaient pas été modifiés. L’ironie du sort, c’est que ces mêmes identifiants étaient présents sur nos sites et nous ne les avons pas modifiés avant d’avoir été attaqués. Les principaux outils utilisés étaient mon terminal de commande avec les commandes « nmap » et « dirb » qui me permettaient de trouver des informations sur les protocoles ainsi que les liens des sites. L’outil « Burp » m’a été d’une grande aide ensuite pour analyser ces sites.</p><div class='image-wrapper-est'><div class='image-wrapper'><img src='autres/est2.jpg' alt='Image 2'><div class='description'><h4 style='margin:auto;'>Extrait d'un résultat de commande 'nmap' sur le réseau</h4></div></div><div class='image-wrapper'><img src='autres/est3.jpg' alt='Image 3'><div class='description'><h4 style='margin:auto;'>Extrait d'une commande 'hashcat' qui me permet de déchiffrer</h4></div></div></div><br><p>Quelques fois dans la journée, pour changer de domaine sur lequel je travaillais, j’ai participé à la mise en route des trains sur une maquette que l’organisation avait mise en place. En effet, en tant que « pays », nous avions à charge une entreprise ferroviaire que nous devions faire tourner pour gagner des points lors de cet exercice.</p><div class='image-wrapper'><img src='autres/est4.png' alt='Image 4'><div class='description'><h4 style='margin:auto;'>Maquette de train à laquelle je travaillais (à droite), image extraite d'un reportage</h4></div></div><p><br><b>Mercredi :</b> Pour ce dernier jour, j’ai continué à travailler sur les mêmes sujets que les jours précédents. Cependant, j’ai passé la plupart de mon temps à travailler dans l’ambassade du pays adverse sur un challenge de récupération d’informations par ondes radio à l’aide d’un clavier et d’un « dongle » avec Arnaud. Nous avons perdu beaucoup de temps car nous pensions que c’était du Bluetooth, le type d’ondes utilisées. Puis nous avons commis l’erreur d’écouter l’équipe adverse qui nous a mis sur une mauvaise piste pendant plusieurs heures. Après maintes tentatives, nous avons réussi à récupérer les données entrées sur le clavier sur notre PC.</p><div class='image-wrapper'><img src='autres/est5.jpg' alt='Image 5'><div class='description'><h4 style='margin:auto;'>Maquette de l'ambassade dans laquelle je travaillais</h4></div></div><p><br><b>Mon ressenti :</b> J’ai adoré vivre cette expérience grandeur nature d’une cyberattaque. Je suis extrêmement reconnaissante envers toute l’équipe organisatrice de cet évènement, mais aussi tous les élèves, qui ont joué le jeu, que ce soit notre équipe ou les équipes adverses. J’ai continué à apprendre pendant ces quelques jours et j’ai hâte de continuer à travailler et apprendre dans ce domaine que j’affectionne particulièrement.</p>"
+            break;
+        case 3:
+            texte = "<p><b style='color:#c40000;'>Du point de vue de Charles</b><br> <br> <b>Préparation : </b>Le CHE est un exercice qui aborde de nombreux aspects de la cybersécurité, tout cela dans des conditions les plus proches du réel possible. Il fallait donc se former en amont pour être le plus performant possible durant l'exercice et pouvoir apporter une plus-value à mon équipe. Pour cela, j'ai décidé d'essayer d'acquérir les connaissances de bases dans un maximum de sujets possibles. Cela permettrait de ne pas être complètement perdu quand une épreuve se présenterait, et permettrait de gagner du temps sur l'apprentissage plus détaillé par la suite.<br><br><b>TryHackMe </b> <br><br>J'ai donc commencé mon apprentissage sur TryHackMe qui est un site contenant de nombreux cours de cybersécurité avec des mises en pratique régulières de ce qui est enseigné. Si on ne sait pas par quoi commencer, le site contient de nombreux parcours guidés, pour tous les niveaux et plus ou moins spécialisés. J'ai personnellement choisi le parcours 'complete beginner', même si de nombreux sujets avaient déjà été abordé en cours, la partie pratique permettait de consolider les acquis.<br><br>Ce parcours aborde la majorité des sujets importants pour débuter: l'utilisation de linux et des lignes de commandes, les réseaux et l'exploitation de failles dans ces derniers, l'exploitation web, la cryptographie, l'élévation de privilège sur windows et linux et l'exploitation de failles diverses et variées. Il y a également des modules pour apprendre à utiliser des outils qui se prouveront très utiles par la suite sur des scénarios plus concrets comme Burp, Nmap (très important pour le CHE, en attaque comme en défense), john the ripper, hashcat et metasploit pour ne citer que les plus importants.<br><br>Pour accéder à l'enssemble des cours, il faut payer un abonnement, mais l'ensemble des connaissances sont accessibles gratuitement sur internet, il n'y aura juste pas de chemin preçis à suivre et pas de pratique à la fin des cours.<br><br> <b>RootMe</b> <br><br>Après avoir fini les cours d'indroductions, je me suis concentré sur root me. RootMe met à disposition des challenges dans une grande variété de domaines de la cybersécurité. Pour suivre mon idée initiale d'avoir des connaissances de bases dans le plus de domaine possible, j'ai réalisé les premiers challenges de chaque sujet. Cela m'a permis de mettre en pratique l'utilisation des outils qui étaient abordés sur TryHackMe et d'en découvrir d'autres. Je me suis ensuite concentré sur l'exploitation d'application web coté serveur. J'ai fait ce choix car le web est au coeur de notre vie quotidienne, nous parcourons des sites internet tous les jours, il est donc très probable de tomber sur un site web contenant des failles dans des situations plus concrètes, et donc, pendant le CHE. Cela m'a donc permis de travailler sur de nombreuses failles comme les failles HTTP, l'upload de fichier, GraphQL, les injection SQL / XSS / LDAP, les JWT, etc.<br><br><b>Lundi : </b>Le premier jour a surtout servi à nous familiariser avec l'infrastructure, les règles, découvrir les installations et établir une stratégie. La première chose à faire était de comprendre la configuration réseau de notre équipe et de commencer à scanner le réseau pour trouver de potentielles machines ennemies. Le réseau de la tente de LIO était en fait séparé en plusieurs sous réseaux, chacun contenant un unique terminal avec une unique adresse ip publique. Cela permet de limiter les dégats si une de nos adresse IP est identifiée par la défense ennemie. Il n'y avait pas assez de terminaux pour tout le monde, nous nous sommes donc reparti en binômes, une personne sur le terminal et l'autre qui fait des rechercher sur son ordi personnel pour l'assister. Nous avons commencé par faire des recherches grâce au serveur DNS qui était présent dans l'infrastructure. Effectivement, ce serveur dont nous connaissions l'adresse IP nous a permis de récupérer nos premièrse adresses IP ennemies afin de commencer la recherche de failles et donc de flags. Avec mon binôme, nous avons particulièrement travaillé sur le site de presse des Anumeric, le times new roman. Nous avons trouvé une faille dans la configuration de la base de données, ce qui nous a permis de récupérer son contenu et donc des couples utilisateur/mot de passe.<br><br><b>Mardi :</b> Le deuxième jour, nous avons continué à faire beaucoup de scans avec nmap, en essayant d'être le plus discret possible pour ne pas se faire bannir nos IP. Chaque nouvelle IP ennemie était renseigné sur la cartographie du réseau ennemi et analysée pour trouver des failles. Vers la fin du deuxième jour, un sac à dos contenant une carte Raspbeyry Pi avec une antenne a été retrouvé dans l'ambassade Anumeric sur notre territoire, je me suis donc occupé de récupérer cette carte et d'analyser son contenu et son fonctionnement. En analysant le code présent, je me suis rendu compte que cette carte servait à établir un canal sécurisé chiffré entre l'ambassade et le pays ennemi. Le but à présent était donc de trouver une faille dans le processus de chiffrement utilisé et de faire un script pour automatiser le déchiffrement des communications ennemies. Cette tâche m'a pris toute la soirée et toute la nuit.<br><br><b>Mercredi :</b> Après avoir dormi 2 heures, il étant temps d'exploiter le canal sécurisé ennemie. Les Anumeric envoyaient des documents Word par mail contenant des instructions pour leurs robots dans une usine. Ces documents world étaient compressés dans une archive nécessitant un mot de passe pour y accéder, ce mot de passe était envoyé via ce canal chiffré. Le but était donc d'écrire un malware qui permettrait de mettre hors service ce robot, ce dernier serait injecté dans un document Word envoyé par l'ennemie. Quand l'opérateur ouvre le document Word sur son ordinateur, il serait identique à celui d'origine, mais exécuterait en réalité le malware en arrière-plan. j'avais donc le vecteur de mon attaque, mais il me manquait le payload, pour écrire le payload, il fallait trouver la documentation du robot ciblé. Cette documentation était présente sur une machine dans le réseau Anumeric, nous devions donc trouver cette machine. Le fait de trouver cette machine et donc les documents nous a malheureusement pris toute la fin de la nuit et la matinée, je n'ai donc pas pu finaliser ce malware. Chercher cette machine nous a quand même permis de découvrir un peu plus du réseau ennemi, en particulier un Active Directory, qui contenait des informations sur beaucoup de machines Anumeric.<br><br><b>Mon ressenti :</b> Cet événement était vraiment une expérience unique. Une fois fini, on se rend compte de la chance qu'on a eu de pouvoir participer à un événement demandant autant de préparations, de logistiques et de personnels pour pouvoir voir le jour. Le fait de travailler en équipe dans une situation proche du réel permet de se rendre compte que ce n'est pas possible de tout faire tout seul et d'être expert dans tous les domaines. Chaque membre de l'équipe avait au moins une connaissance sur un sujet que personne d'autre n'avait et qui nous a permis d'avancer. <br><br>Le fait d'être dans cette ambiance de compétition, de crise et d'inconfort (dû au manque de place, de sommeil, d'information) nous a, je pense, tous permis de faire d'énormes progrès, aussi bien au niveau de la technique, qu'a niveau de l'appréhension l'organisation de notre travail.</p>";
+            break;
+        case 4:
+            texte = "<p><b style='color:#005fc4;'>Du point de vue d'Arnaud</b> <br> <br> <b>Préparation :</b> Afin de me préparer pour le Cyber Humanum Est (CHE), j'ai relevé de nombreux défis sur Root Me afin de me familiariser avec des outils de Kali Linux (comme Burp Suite, Wireshark, Hashcat, etc.). Je me suis principalement concentré sur les défis de cryptographie, de stéganographie, de serveur web et de client web. Mon score sur Root Me est passé de 0 à 1130 points. <br><br><b>Lundi :</b> Durant le premier jour, notre mission principale était de découvrir et de cartographier le réseau. Cela nous a pris une bonne partie de la journée. En fin d’après-midi, j'ai également suivi une formation rapide sur les logiciels d'administration des automates Siemens et des pare-feu GÉOÏDE. Mon bilan de cette journée est que j'ai manqué d'expérience, notamment en ce qui concerne l'utilisation de la commande 'nmap'. J'ai donc passé ma soirée à apprendre comment l'utiliser correctement afin d'être prêt le lendemain. De plus, nous avons discuté d'une stratégie pour commencer à attaquer les adversaires.<br><br> <b>Mardi :</b> Le lendemain matin, je me suis introduit dans une des tentes adverses afin de poser un câble Ethernet sur leur routeur. Notre stratégie était de lancer une attaque depuis leur réseau afin de récupérer un maximum de drapeaux et de faire tomber certaines structures adverses. Malheureusement, l'attaque n'a pas eu lieu car notre équipe a mis trop de temps à préparer une offensive, ce qui a permis aux adversaires de découvrir le câble sur leur routeur. Un des problèmes que cette découverte a posés était que le câble constituait une preuve contre nous, il a donc fallu le récupérer le plus rapidement possible. J'ai donc élaboré un plan en détournant un journaliste présent sur les lieux afin qu'il aille récupérer le câble à notre place. Le plan s'est bien déroulé mais les militaires présents sur le site m'ont repéré, j'ai donc été en prison pendant 30 minutes. Le reste de la journée, j'ai participé aux missions de Siemens qui consistaient à sécuriser leurs automates. Le soir, j'ai réalisé les CTF de l'ambassade dans lesquels j'ai pu récupérer les données d'une carte d'authentification avec une puce RFID et les transférer dans une autre carte. J'ai aussi commencé un défi qui consistait à pirater un clavier Bluetooth à distance afin de récupérer les entrées de celui-ci. Je suis ensuite allé me coucher à 4h du matin. <br><br> <b>Mercredi :</b> Je me suis réveillé vers 6h30 et j'ai repris directement le défi du clavier, mais j'étais très fatigué et ma concentration était vraiment réduite. J'ai passé la journée à essayer de résoudre le défi, ce que j'ai réussi à faire vers 15h (j'ai passé énormément de temps dessus). <br><br> <b>Mon ressenti :</b> Cette expérience était unique en son genre, et je suis vraiment reconnaissant envers l'ensemble des organisateurs d'avoir pu nous offrir une expérience comme celle-ci. J'ai pu apprendre à dépasser mes limites, observer et utiliser d'autres techniques de piratage, plus physiques comme l'ingénierie sociale par exemple. J'ai le sentiment d'avoir énormément progressé durant ces 3 jours. Je ne retiens que du positif de cette expérience.</p>";
+            break;
+        default:
+            texte = "Sélection invalide.";
+    }
+    document.getElementById("texte").innerHTML = texte;
+    }
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+  </script>
