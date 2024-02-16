@@ -1,5 +1,5 @@
 # Cyber Humanum Est - Projet 5A
-Auteurs: Florian IMPROVISATO
+Auteurs: Florian IMPROVISATO, Estelle BABY, Charles WATRELOT, Arnaud BRUGERE
 
 ## Description
 Il s'agit ici d'un site HTML dédié à la présentation de notre équipe, des outils que nous avons utilisés pour nous préparer, des partenaires de l'évènement et des retours d'expérience de chacun des membres.
